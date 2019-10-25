@@ -1,0 +1,5 @@
+[ ] open ports for TRIPS
+[ ] mount a shared directory
+[ ] download version of TRIPS code into shared dir
+[ ] run the configure-install script
+[ ] load up the lighttpd.conf
