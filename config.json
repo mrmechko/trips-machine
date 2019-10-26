@@ -1,4 +1,4 @@
 {
 	"system_name": "gloss",
-	"acquire_trips": "cd shared && tar xvf ../../gloss.tar.gz"
+	"acquire_trips": "./acquire-trips.sh"
 }

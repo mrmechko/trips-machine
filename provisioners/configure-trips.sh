@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source ~/SYSTEM_NAME
 DEPPATH="$TRIPSDEP/tripsDependencies"
 
 echo $DEPPATH
@@ -13,8 +14,6 @@ WORDNET="--with-wordnet=/home/vagrant/nltk_data/corpora/wordnet/"
 
 
 cd /home/vagrant/shared/$SYSTEM_NAME/src
-
-rm -rf config/scala
 
 echo "CLEANING"
 

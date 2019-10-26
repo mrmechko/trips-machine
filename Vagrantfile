@@ -38,9 +38,10 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "shared", "/home/vagrant/shared"
   config.ssh.forward_agent = true
 
-  if File.file? "shared/#{params["system_name"]}"
-  acquire_trips = params["acquire_trips"] || "echo 'Skipping acquisition'"
-  result = `#{acquire_trips}`
+  if not File.directory? "shared/#{params["system_name"]}"
+  	acquire_trips = params["acquire_trips"] || "echo 'Skipping acquisition'"
+  	result = `#{acquire_trips}`
+  end
 
   config.vm.provider "virtualbox" do |vb|
      # Customize the amount of memory on the VM:
@@ -48,15 +49,19 @@ Vagrant.configure("2") do |config|
   end
   
   #replace SYSTEM_NAME
-  config.vm.provision "shell", inline: <<-SHELL
-     echo "echo SYSTEM_NAME=#{params["system_name"]}" > ~/SYSTEM_NAME
+  config.vm.provision "system_name", type: "shell", run: "once", inline: <<-SHELL
+     echo "export SYSTEM_NAME=#{params["system_name"]}" > SYSTEM_NAME
   SHELL
 
-  # acquire trips
-  #config.vm.provision "shell", type: "shell", path: "provisioners/acquire-trips.sh", privileged: false, run: "once", args: params["trips-source"]
 
   config.vm.provision "trips-configure", type: "shell", path: "provisioners/configure-trips.sh", privileged: false, run: "once"
 
   config.vm.provision "server", type: "shell", run: "never", privileged: false,  inline: '/home/vagrant/shared/run_lighttpd.sh'
+
+  config.vm.provision "webparser", type: "shell", run: "once", inline: <<-SHELL
+     cd shared/#{params["system_name"]}/src/WebParser && make -f Makefile-component install
+  SHELL
+
+
   
 end
