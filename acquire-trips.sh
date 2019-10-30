@@ -19,7 +19,7 @@ git clone http://github.com/wdebeaum/webparser WebParser
 
 cd $BASE/shared # in shared
 
-get_subdir step src/TextTagger
+#get_subdir step src/TextTagger
 get_subdir step src/config/Graphviz
 get_subdir step src/config/c++
 

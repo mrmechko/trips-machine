@@ -1,5 +1,6 @@
 #!/bin/bash
 
+curl -L http://cpanmin.us | perl - --self-upgrade
 source ~/SYSTEM_NAME
 DEPPATH="$TRIPSDEP/tripsDependencies"
 
