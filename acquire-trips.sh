@@ -23,4 +23,8 @@ cd $BASE/shared # in shared
 get_subdir step src/config/Graphviz
 get_subdir step src/config/c++
 
+
+rm src/TextTagger/corenlp.mk
+rm src/TextTagger/countries.mk
+
 rm -rf step
