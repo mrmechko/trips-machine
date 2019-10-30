@@ -6,18 +6,16 @@ SYSTEM_NAME=gloss
 function get_subdir {
 	REPO=$1
 	DIR=$2
-	rm -rf $DIR	
-	echo getting $REPO/trunk/$DIR
+	rm -rf $SYSTEM_NAME/$DIR	
 	cp -r $REPO/$DIR $SYSTEM_NAME/$DIR
 }
 
 cd $BASE/shared 
-tar xvf ../../gloss.tar.gz
+tar xf ../../gloss.tar.gz
 git clone https://github.com/wdebeaum/step
 
 cd $BASE/shared/gloss/src
-git clone http://github.com/wdebeaum/webparser
-rm -rf TextTagger
+git clone http://github.com/wdebeaum/webparser WebParser
 
 cd $BASE/shared # in shared
 
