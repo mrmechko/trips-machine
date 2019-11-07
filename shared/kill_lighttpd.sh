@@ -1,4 +1,5 @@
 #!/bin/bash
 
-screen -S step -X quit
 screen -S server -X quit
+screen -S $SYSTEM_NAME -X quit
+screen -S lisp -X quit
