@@ -15,8 +15,7 @@ mkdir gloss
 cd gloss
 cvs checkout -P gloss
 
-cd $BASE/shared/gloss
-cvs checkout src/WebParser
+$BASE/webparser.sh gloss
 
 cd $BASE/shared # in shared
 git clone http://github.com/wdebeaum/step

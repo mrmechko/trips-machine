@@ -14,5 +14,5 @@ cd $BASE/shared
 mkdir step
 cd step
 cvs checkout -P step
-cd $BASE/shared/step
-cvs checkout src/WebParser
+
+$BASE/acquisition/webparser.sh step
