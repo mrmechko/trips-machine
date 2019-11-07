@@ -5,9 +5,9 @@
 3. `vagrant up --provision-with=server`
 
 
-NOTE 1: if you don't have CVS access, but have access to the gloss sourcecode, replace the contents of `acquire-trips.sh` with a command that will place the source code in `shared/gloss`
+NOTE 1: if you don't have CVS access, but have access to the gloss sourcecode, replace the contents of `acquisition/gloss.sh` with a command that will place the source code in `shared/gloss`
 
-NOTE 2: This system should be able to handle any trips system.  Just replace any mentions of `gloss` (`acquire-trips.sh`, `SYSTEM_NAME` should cover it) with the trips system you're interested in
+NOTE 2: This system should be able to handle any trips system.  Just replace any mentions of `gloss` (`system_name` should cover it) with the trips system you're interested in and add the necessary acquisition script to `acquisition/system_name.sh`
 
 # Development
 

@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
   config.ssh.forward_agent = true
 
   if not File.directory? "shared/#{params["system_name"]}"
-  	acquire_trips = params["acquire_trips"] || "echo 'Skipping acquisition'"
+	acquire_trips = params["acquire_trips"] || "acquisition/#{params["system_name"}.sh"
   	result = `#{acquire_trips}`
   end
 

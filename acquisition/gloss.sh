@@ -11,12 +11,12 @@ function get_subdir {
 }
 
 cd $BASE/shared 
-#mkdir gloss
-#cd gloss
-#cvs checkout -P gloss
-#
-#cd $BASE/shared/gloss
-#cvs checkout src/WebParser
+mkdir gloss
+cd gloss
+cvs checkout -P gloss
+
+cd $BASE/shared/gloss
+cvs checkout src/WebParser
 
 cd $BASE/shared # in shared
 git clone http://github.com/wdebeaum/step
