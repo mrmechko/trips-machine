@@ -11,20 +11,18 @@ function get_subdir {
 }
 
 cd $BASE/shared 
-tar xf ../../gloss.tar.gz
-git clone https://github.com/wdebeaum/step
-
-cd $BASE/shared/gloss/src
-git clone http://github.com/wdebeaum/webparser WebParser
+#mkdir gloss
+#cd gloss
+#cvs checkout -P gloss
+#
+#cd $BASE/shared/gloss
+#cvs checkout src/WebParser
 
 cd $BASE/shared # in shared
+git clone http://github.com/wdebeaum/step
 
 #get_subdir step src/TextTagger
 get_subdir step src/config/Graphviz
 get_subdir step src/config/c++
-
-
-rm src/TextTagger/corenlp.mk
-rm src/TextTagger/countries.mk
 
 rm -rf step

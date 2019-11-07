@@ -31,4 +31,4 @@ sleep 5
 
 make && make install
 
-#cd ~/shared/$SYSTEM_NAME/src/WebParser && make && make install
+cd ~/shared/$SYSTEM_NAME/src/WebParser && make -f Makefile-component && make -f Makefile-component install
