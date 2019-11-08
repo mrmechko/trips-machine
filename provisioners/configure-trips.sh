@@ -1,6 +1,5 @@
 #!/bin/bash
 
-curl -L http://cpanmin.us | perl - --self-upgrade
 source ~/SYSTEM_NAME
 DEPPATH="$TRIPSDEP/tripsDependencies"
 
@@ -16,19 +15,21 @@ WORDNET="--with-wordnet=/home/vagrant/nltk_data/corpora/wordnet/"
 
 cd /home/vagrant/shared/$SYSTEM_NAME/src
 
-echo "CLEANING"
-
-# clear out previous compilations
-make clean
-find . -name '*.fasl' -delete
-
 echo "./configure $LISP $WORDNET $CONFIG"
 
 sleep 5
 
 ./configure $LISP $WORDNET $CONFIGS
 
+echo "CLEANING"
+
+# clear out previous compilations
+ make clean
+find . -name '*.fasl' -delete
+
 
 make && make install
 
-cd ~/shared/$SYSTEM_NAME/src/WebParser && make -f Makefile-component && make -f Makefile-component install
+if test -f "~/shared/$SYSTEM_NAME/src/WebParser"; then
+	cd ~/shared/$SYSTEM_NAME/src/WebParser && make -f Makefile-component && make -f Makefile-component install
+fi
