@@ -2,6 +2,6 @@ set -e
 
 BASE=`pwd`
 
-cd $BASE$1
+cd $BASE/shared/$1
 cvs checkout src/WebParser
 

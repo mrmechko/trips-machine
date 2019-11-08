@@ -15,6 +15,7 @@ mkdir gloss
 cd gloss
 cvs checkout -P gloss
 
+cd $BASE
 $BASE/acquisition/webparser.sh gloss
 
 cd $BASE/shared # in shared

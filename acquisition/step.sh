@@ -15,4 +15,5 @@ mkdir step
 cd step
 cvs checkout -P step
 
+cd $BASE
 $BASE/acquisition/webparser.sh step
