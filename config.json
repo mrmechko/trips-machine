@@ -1,5 +1,5 @@
 {
-	"name": "step",
-	"system_name": "step",
+	"name": "gloss",
+	"system_name": "gloss",
 	"preconfigure": "provisioners/pre-configure.sh"
 }
