@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "thesoulshell/trips-base"
-  config.vm.define "trips-machine"
+  config.vm.define params["name"] || "trips-machine"
   config.vm.hostname = params["name"] || "trips"
 
   # Ports
