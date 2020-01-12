@@ -60,7 +60,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "compile", type: "shell", path: "provisioners/configure-trips.sh", privileged: false, run: "once"
 
-  config.vm.provision "compile", type: "shell", path: "provisioners/configure-trips.sh", privileged: false, run: "once"
+  #config.vm.provision "compile", type: "shell", path: "provisioners/configure-trips.sh", privileged: false, run: "once"
 
   config.vm.provision "server", type: "shell", run: "never", privileged: false,  inline: '/home/vagrant/shared/run_lighttpd.sh'
 

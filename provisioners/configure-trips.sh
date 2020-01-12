@@ -24,7 +24,7 @@ sleep 5
 echo "CLEANING"
 
 # clear out previous compilations
- make clean
+make clean
 find . -name '*.fasl' -delete
 
 
