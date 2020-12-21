@@ -1,0 +1,6 @@
+(require 'asdf)
+(load "~/quicklisp/setup.lisp")
+
+(push #p"~/sly/slynk/" ASDF:*CENTRAL-REGISTRY*)
+(asdf:require-system :slynk)
+(slynk:create-server :port 4008)

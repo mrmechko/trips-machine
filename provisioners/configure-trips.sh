@@ -13,6 +13,7 @@ LISP="--with-lisp=sbcl"
 WORDNET="--with-wordnet=/home/vagrant/nltk_data/corpora/wordnet/"
 
 
+mkdir -p /home/vagrant/shared/$SYSTEM_NAME/www/etc/lisp
 cd /home/vagrant/shared/$SYSTEM_NAME/src
 
 echo "./configure $LISP $WORDNET $CONFIG"

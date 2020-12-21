@@ -22,16 +22,23 @@ Vagrant.configure("2") do |config|
   config.vm.box = "thesoulshell/trips-base"
   config.vm.define params["name"] || "trips-machine"
   config.vm.hostname = params["name"] || "trips"
+  config.vm.boot_timeout = 600
+  config.vm.provider :virtualbox do |v|
+    v.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+    v.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
+  end
 
   # Ports
   t_port = params["trips_port"] || 6200
   d_port = params["webparser_port"] || 8081
   w_port = params["webapp_port"] || 8080
+  s_port = params["slynk"] || 4008 
 
   config.vm.network "forwarded_port", guest: 6200, host: t_port
   config.vm.network "forwarded_port", guest: 11235, host: d_port
 
   config.vm.network "forwarded_port", guest: 80, host: w_port
+  config.vm.network "forwarded_port", guest: 4008, host: s_port
 
   config.vm.network "private_network", type: "dhcp"
 
@@ -52,6 +59,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision "system_name", type: "shell", run: "once", inline: <<-SHELL
      echo "export SYSTEM_NAME=#{params["system_name"]}" > SYSTEM_NAME
   SHELL
+
+  # trigger reload
+  config.vm.provision :reload
 
 
   if params["preconfigure"]
