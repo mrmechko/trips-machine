@@ -27,4 +27,5 @@ done
 sudo apt-get install -y libicu-dev
 
 cp ~/shared/.sbclrc ~/.sbclrc
+cd ~ && git clone https://github.com/joaotavora/sly
 

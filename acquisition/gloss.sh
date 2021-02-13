@@ -15,6 +15,8 @@ mkdir gloss
 cd gloss
 cvs checkout -P gloss
 
+cd src/ && git clone https://github.com/mrmechko/jsontrips
+
 cd $BASE
 $BASE/acquisition/webparser.sh gloss
 

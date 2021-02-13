@@ -7,7 +7,7 @@ echo $DEPPATH
 
 CONFIGS="--with-corenlp=$DEPPATH/stanford-corenlp/stanford-corenlp/ --with-ner=$DEPPATH/stanford-ner/stanford-ner/ --with-postagger=$DEPPATH/stanford-postagger/stanford-postagger/ --with-parser=$DEPPATH/stanford-parser/stanford-parser/ --with-geonames=$DEPPATH/geonames/2014-12-02/NationalFile.zip --with-wndb=$DEPPATH/wn.db --with-perl-lib=/home/vagrant/perl5/lib/perl5"
 
-LISP="--with-lisp=sbcl"
+LISP="--with-lisp=sbcl --with-fasl=fasl"
 
 # using NLTK's version of wordnet, which means we have to put glosstags in there too
 WORDNET="--with-wordnet=/home/vagrant/nltk_data/corpora/wordnet/"
